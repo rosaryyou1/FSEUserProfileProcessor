@@ -1,5 +1,6 @@
 package com.cognizant.aws.fse.profileprocessor.util;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import com.cognizant.aws.fse.profileprocessor.Json.domain.Skill;
@@ -13,6 +14,7 @@ public class UserModelJsonConverter {
 		user.setAssociateName(userJson.getAssociateName());
 		user.setEmail(userJson.getEmail());
 		user.setMobile(userJson.getMobile());
+		user.setCre8Ts(LocalDate.now().toString());
 		List<Skill> lstSkill = userJson.getSkills();
 		for(Skill skill : lstSkill) {
 		if("Angular".equalsIgnoreCase(skill.getSkillName())){

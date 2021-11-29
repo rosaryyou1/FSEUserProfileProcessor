@@ -6,41 +6,76 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBIndexHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+@JsonIgnoreProperties(ignoreUnknown = true)
 @DynamoDBTable(tableName = "FSEProfile")
 public class User {
+	@JsonProperty("UserId")
 	String userId;
+	@JsonProperty("Mobile")
 	String mobile;
+	@JsonProperty("Email")
 	String email;
+	@JsonProperty("Angular")
 	String angular;
+	@JsonProperty("AngularLevel")
 	int angularLevel;
+	@JsonProperty("HtmlCss")
 	String htmlCss;
+	@JsonProperty("HtmlCssLevel")
 	int htmlCssLevel;
+	@JsonProperty("React")
 	String react;
+	@JsonProperty("ReactLevel")
 	int reactLevel;
+	@JsonProperty("Spring")
 	String spring;
+	@JsonProperty("SpringLevel")
 	int springLevel;
+	@JsonProperty("Rest")
 	String rest;
+	@JsonProperty("RestLevel")
 	int restLevel;
+	@JsonProperty("Hibernate")
 	String hibernate;
+	@JsonProperty("HibernateLevel")
 	int hibernateLevel;
+	@JsonProperty("Git")
 	String git;
+	@JsonProperty("GitLevel")
 	int gitLevel;
+	@JsonProperty("Docker")
 	String docker;
+	@JsonProperty("DockerLevel")
 	int dockerLevel;
+	@JsonProperty("Jenkins")
 	String jenkins;
+	@JsonProperty("JenkinsLevel")
 	int jenkinsLevel;
+	@JsonProperty("Aws")
 	String aws;
+	@JsonProperty("AwsLevel")
 	int awsLevel;
+	@JsonProperty("Spoken")
 	String spoken;
+	@JsonProperty("SpokenLevel")
 	int spokenLevel;
+	@JsonProperty("Communication")
 	String communication;
+	@JsonProperty("CommunicationLevel")
 	int communicationLevel;
+	@JsonProperty("Aptitude")
 	String aptitude;
+	@JsonProperty("AptitudeLevel")
 	int aptitudeLevel;
+	@JsonProperty("Cre8Ts")
 	String cre8Ts;
+	@JsonProperty("LstUptTs")
 	String lstUptTs;
+	@JsonProperty("AssociateName")
 	String associateName;
+	@JsonProperty("AssociateId")
 	String associateId;
 
 	@DynamoDBHashKey(attributeName ="AssociateId")	
@@ -343,18 +378,7 @@ public class User {
 		this.aptitudeLevel = aptitudeLevel;
 	}
 
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ",  mobile=" + mobile + ", email=" + email + ", angular=" + angular + ", angularLevel=" + angularLevel
-				+ ", htmlCss=" + htmlCss + ", htmlCssLevel=" + htmlCssLevel + ", react=" + react + ", reactLevel="
-				+ reactLevel + ", spring=" + spring + ", springLevel=" + springLevel + ", rest=" + rest + ", restLevel="
-				+ restLevel + ", hibernate=" + hibernate + ", hibernateLevel=" + hibernateLevel + ", git=" + git
-				+ ", gitLevel=" + gitLevel + ", docker=" + docker + ", dockerLevel=" + dockerLevel + ", jenkins="
-				+ jenkins + ", jenkinsLevel=" + jenkinsLevel + ", aws=" + aws + ", awsLevel=" + awsLevel + ", spoken="
-				+ spoken + ", spokenLevel=" + spokenLevel + ", communication=" + communication + ", communicationLevel="
-				+ communicationLevel + ", aptitude=" + aptitude + ", aptitudeLevel=" + aptitudeLevel + "]";
-	}
-	@DynamoDBAttribute(attributeName = "Cre8Ts")
+		@DynamoDBAttribute(attributeName = "Cre8Ts")
 	public String getCre8Ts() {
 		return cre8Ts;
 	}
@@ -368,6 +392,19 @@ public class User {
 	}
 	public void setLstUptTs(String lstUptTs) {
 		this.lstUptTs = lstUptTs;
+	}
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", mobile=" + mobile + ", email=" + email + ", angular=" + angular
+				+ ", angularLevel=" + angularLevel + ", htmlCss=" + htmlCss + ", htmlCssLevel=" + htmlCssLevel
+				+ ", react=" + react + ", reactLevel=" + reactLevel + ", spring=" + spring + ", springLevel="
+				+ springLevel + ", rest=" + rest + ", restLevel=" + restLevel + ", hibernate=" + hibernate
+				+ ", hibernateLevel=" + hibernateLevel + ", git=" + git + ", gitLevel=" + gitLevel + ", docker="
+				+ docker + ", dockerLevel=" + dockerLevel + ", jenkins=" + jenkins + ", jenkinsLevel=" + jenkinsLevel
+				+ ", aws=" + aws + ", awsLevel=" + awsLevel + ", spoken=" + spoken + ", spokenLevel=" + spokenLevel
+				+ ", communication=" + communication + ", communicationLevel=" + communicationLevel + ", aptitude="
+				+ aptitude + ", aptitudeLevel=" + aptitudeLevel + ", cre8Ts=" + cre8Ts + ", lstUptTs=" + lstUptTs
+				+ ", associateName=" + associateName + ", associateId=" + associateId + "]";
 	}
 
 
